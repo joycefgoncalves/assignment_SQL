@@ -1,0 +1,31 @@
+#task 1
+
+SELECT DISTINCT department_id
+FROM Employees;
+
+
+SELECT DISTINCT d.department_name
+FROM Employees e
+JOIN Departments d ON e.department_id = d.department_id;
+
+#task 2
+
+SELECT department_id, COUNT(*) AS total_employees
+FROM Employees
+GROUP BY department_id;
+
+SELECT d.department_name, COUNT(*) AS total_employees
+FROM Employees e
+JOIN Departments d ON e.department_id = d.department_id
+GROUP BY e.department_id;
+
+
+#task 3
+
+SELECT *
+FROM Employees
+WHERE age BETWEEN 25 AND 30;
+
+SELECT name, age, department_id
+FROM Employees
+WHERE age BETWEEN 25 AND 30;
