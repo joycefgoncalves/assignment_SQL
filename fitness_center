@@ -1,0 +1,31 @@
+#task 1
+
+-- Insert records into Members table
+INSERT INTO Members (id, name, age) VALUES
+(1, 'Demi Lovato', 30),
+(2, 'Ariana Grande', 25),
+(3, 'Michael Jackson', 40);
+
+-- Insert records into WorkoutSessions table
+INSERT INTO WorkoutSessions (session_id, member_id, session_date, session_time, activity) VALUES
+(1, 1, '2024-06-13', '08:00 AM', 'Cardio'),
+(2, 2, '2024-06-14', '09:30 AM', 'Weightlifting'),
+(3, 3, '2024-06-15', '06:00 PM', 'Yoga');
+
+#task 2
+
+-- Update workout session time for member 'Jane Doe' from morning to evening
+UPDATE WorkoutSessions
+SET session_time = '06:00 PM'
+WHERE member_id = (
+    SELECT id
+    FROM Members
+    WHERE name = 'Demi Lovato'
+);
+
+#task 3
+
+-- Delete data of member 'John Smith' from the Members table
+DELETE FROM Members
+WHERE name = 'Ariana Grande';
+
